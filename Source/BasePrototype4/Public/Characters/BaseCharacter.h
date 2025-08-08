@@ -13,4 +13,14 @@ class BASEPROTOTYPE4_API ABaseCharacter : public ACharacter
 
 public:
 	ABaseCharacter();
+protected:
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> Weapon;
+
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+	class USpringArmComponent* CameraBoom;
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+	class UCameraComponent* FollowCamera;
 };
